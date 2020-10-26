@@ -4,22 +4,18 @@
 #For example, if the list is [-10, 5, 2], we should return 500, since that's -10 -10 5
 #You can assume the list has at least three integers.  
 
-import numpy as np
-a=[2,3,-10,5,-2,4]
-np.sort(a)
 
-multiplied_list= ([i**2 for i in a])
-print(multiplied_list)
+vector=[-10,5,2]
 
-np.sort(multiplied_list)
-b=np.sort(multiplied_list)
-f=(b[-1])
-g=(b[-2])
-h=(b[-3])
+smallest= min(vector)
+biggest= max(vector)
 
-def largest(c,d,e):
-    return c*d*e
-largest(f,g,h)
+if (sammlest >=0 and biggest >=0) or (sammlest<0 and biggest<0) or abs(smallest)<biggest:
+    result = biggest*biggest*biggest
+    else: 
+        result= smallest*smallest*biggest
+        
+        print(result)
 
 
 #question2
