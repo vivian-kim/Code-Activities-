@@ -1,0 +1,174 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#question1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def get_integers(n):\n",
+    "    return [int(y) for y in str(n)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[4, 5, 0, 2, 9, 4]"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "get_integers(450294)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#question2 \n",
+    "\n",
+    "def longest_palindrome (self,s:str) -> str:\n",
+    "#left index, and right index \n",
+    "    def expand(s,left,right):\n",
+    "        while left>=0 and right <len(s) and s[left]==s[right]:\n",
+    "            #finding the centre charachter\n",
+    "            left -=1\n",
+    "            right +=1\n",
+    "            #we are checking left and right index to expand \n",
+    "        return s[left+1:right]\n",
+    "\n",
+    "    longest=\"\"\n",
+    "    for i in range(len(s)):\n",
+    " \n",
+    "        centre = expand(s,i,i)\n",
+    "        #charcater i is in the centre of the palindrome\n",
+    "        inbetween=expand(s,i,i+1)\n",
+    "        #inbetween is checking the character next to the centre character\n",
+    "        #\n",
+    "\n",
+    "        longest=max(longest,centre,inbetween,key=len)\n",
+    "    return longest"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'racecar'"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "longest_palindrome(\"\",\"racecar\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#question3: ##not sure why,but if I don't add break in the end, it gives me multiple values\n",
+    "\n",
+    "def this_is_prime(n):\n",
+    "    for x in range(n):\n",
+    "\n",
+    "        if x>1:\n",
+    "            for d in range(2,x):\n",
+    "                if(x%d==0):\n",
+    "                    break\n",
+    "                else: \n",
+    "                    print(\"prime value: \" + str(x)) \n",
+    "                    break\n",
+    "                    \n",
+    "            "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "prime value: 3\n",
+      "prime value: 5\n",
+      "prime value: 7\n",
+      "prime value: 9\n",
+      "prime value: 11\n",
+      "prime value: 13\n",
+      "prime value: 15\n",
+      "prime value: 17\n",
+      "prime value: 19\n",
+      "prime value: 21\n",
+      "prime value: 23\n",
+      "prime value: 25\n",
+      "prime value: 27\n",
+      "prime value: 29\n"
+     ]
+    }
+   ],
+   "source": [
+    "this_is_prime(30)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
